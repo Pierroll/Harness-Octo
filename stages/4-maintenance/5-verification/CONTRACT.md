@@ -6,7 +6,7 @@
 
 | Entrada | ¿Obligatoria? | Qué la satisface | Qué la invalida |
 |---|---|---|---|
-| Fix implementado | **Sí.** | PR o Diff en rama | Fix que no compila |
+| Fix implementado | **Sí.** | Hash SHA inmutable (Receipt) en rama efímera | Fix que no compila |
 
 ## Salidas obligatorias
 
