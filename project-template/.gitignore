@@ -1,0 +1,8 @@
+# Credenciales y tokens por proyecto (defensa en profundidad)
+.env
+.env.local
+.env.*
+
+# Graphify Artifacts (OCTO Maintenance)
+graphify-out/
+graph.json
