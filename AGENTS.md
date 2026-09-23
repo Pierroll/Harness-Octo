@@ -98,6 +98,8 @@ vocabulario por etapa.
 
 13. **Preflight Check (Gatekeeper Cero Alucinaciones).** Antes de iniciar trabajo de código o análisis estructural, el orquestador DEBE detenerse y ejecutar un *Preflight Check*: verificar y reportar si las dependencias base de OCTO (Engram, Graphify, GitHub CLI) están instanciadas en el entorno local del proyecto. Si falta alguna, es OBLIGATORIO detenerse, informarlo y pedir permiso explícito al usuario para configurar o instanciar el componente faltante (ej. crear el repo vía gh, instanciar el grafo). Trabajar a ciegas sin este seteo está prohibido.
 
+14. **Seguridad de Ramas (PR-Only Estricto).** Queda terminantemente prohibido hacer `git push` directo a `main` o a la rama de producción. Toda tarea de mantenimiento, fix o feature DEBE salir empaquetada en un Pull Request formal, apoyado en el framework 4R. La seguridad y revisión cruzada están por encima de la velocidad.
+
 ## Dónde vive cada skill
 
 | Necesitas | Skill |
