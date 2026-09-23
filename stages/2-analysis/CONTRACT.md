@@ -28,6 +28,7 @@ registra y se sigue.
 | Entrada | ¿Obligatoria? | Qué la satisface | Qué la invalida |
 |---|---|---|---|
 | Transcript de cada sesión ejecutada | **Sí.** Sin transcript no hay sesión procesable | `discovery/2-analysis/inputs/d<N>-transcript.md`, vía `skills/import-transcript/` o pegado a mano. No va en `inherited/` | Un resumen de memoria en lugar del transcript |
+| Hallazgos de Investigación (Research) | **Sí.** Para asegurar decisiones tecnológicas informadas | `discovery/1.5-research/outputs/research-findings.md`, o en `inherited/` si viene de un discovery previo | Que se hayan elegido librerías o arquitecturas de memoria sin evidencia contrastada |
 | Temas por entender con sesión asignada | **Sí** | `discovery/1-planning/outputs/gaps-and-risks-draft.md`, o `gaps-and-risks.md` dejado en `2-analysis/inputs/inherited/` | Que se haya escrito antes de un cambio grande en el sistema del cliente |
 | As-Is y To-Be tentativos | **Sí.** Lo que no vale es empezar a levantar el As-Is desde cero en las sesiones | `discovery/1-planning/outputs/as-is-draft.md` y `to-be-draft.md`, o `as-is.md` y `to-be.md` en `inherited/` | Nada lo invalida: la etapa 2 los profundiza |
 | Calendario de sesiones con dueños | **Sí** | `discovery/1-planning/outputs/ready-to-take/Discoveries_<cliente>.docx`, o `2-analysis/inputs/inherited/session-calendar.md` (o `Discoveries.docx` ahí) | Fechas sin confirmar del lado del cliente |

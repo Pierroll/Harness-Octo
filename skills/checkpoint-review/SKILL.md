@@ -84,6 +84,18 @@ Verifica tres puntos de esa tabla:
 Si la tabla no existe, el veredicto es RECHAZADO sin revisar el resto: sin ella no se
 puede afirmar qué quedó afuera.
 
+## Protocolo de Handoff (Relevo Cognitivo)
+
+> **SUPERVIVENCIA A LA COMPACTACIÓN:** La memoria de contexto del orquestador es finita. Para evitar que el agente "olvide" detalles críticos al cambiar de etapa, es obligatorio realizar un relevo cognitivo antes de autorizar el cierre formal de la etapa.
+
+Antes de sellar la etapa, el orquestador DEBE redactar un resumen ultracompacto llamado `handoff-state.md` y guardarlo en la raíz de la etapa activa (ej. `stages/4-maintenance/cases/<numero>/handoff-state.md`). 
+Este archivo NO es un entregable para el cliente, es un estado mental interno para el propio agente.
+
+**Contenido estricto de `handoff-state.md`:**
+1. **Objetivo:** 1 línea con la meta original del ticket/etapa.
+2. **Descubrimientos clave:** Máximo 2 líneas de hallazgos críticos descubiertos durante esta etapa.
+3. **Directiva de Relevo:** La instrucción exacta y concisa de lo que debe hacer la etapa siguiente al tomar el mando.
+
 ## El relevamiento (también en cada cierre de etapa)
 
 Junto a la tabla va el relevamiento (`templates/handoff.md`): el contexto humano que la

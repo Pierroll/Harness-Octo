@@ -14,6 +14,8 @@ description: Escribe el código para solucionar el error, apoyándose en la caus
 > **PREVENCIÓN DE ALUCINACIÓN (Context7):** Si el contexto del issue o el grafo de Graphify indican que la solución involucra el uso de frameworks, librerías externas o APIs de terceros, TIENES PROHIBIDO programar de memoria. 
 > DEBES realizar un paso previo llamado "Fetch Live Context": usa herramientas de terminal (`curl`, `gh`, el navegador si está disponible, o explora `node_modules`/dependencias locales) para traer la documentación oficial de la versión exacta que usa el proyecto, y anéxala a tu espacio de trabajo antes de escribir el parche.
 
+**0. GUARDRAIL CHECK:** Evalúa obligatoriamente el skill `security-guardrails` cruzando la lista de archivos a modificar contra la Deny List. Si existe una colisión, **ABORTE LA EJECUCIÓN INMEDIATAMENTE** y rechace la implementación solicitando intervención humana.
+
 1. Lee los insumos definidos en el contrato.
 2. Ejecuta tu tarea específica de mantenimiento.
 3. Genera la salida esperada.

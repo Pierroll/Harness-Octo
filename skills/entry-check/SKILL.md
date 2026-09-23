@@ -127,6 +127,11 @@ Además de las marcas `contradice:` y los archivos en `discovery/inbox/`, existe
 - **Registro de Iteración:** Si en el directorio actual (`pwd`) existe un archivo llamado `iteration-record.md`, significa que el artefacto previo fue rechazado en una etapa posterior (ej. Verificación). 
 - **Acción Obligatoria:** En este escenario, el `entry-check` evaluará la entrada como "Entra con huecos" (requiere re-procesamiento) y **DEBE** anexar el contenido completo de `iteration-record.md` al payload de contexto que se le entregará a la etapa actual.
 
+### 4. Protocolo de Supervivencia a la Compactación (Handoff)
+- Al arrancar cualquier etapa nueva, el agente orquestador DEBE buscar activamente la existencia de un archivo llamado `handoff-state.md` en el directorio de la etapa o caso.
+- **Si el archivo existe:** El orquestador DEBE leerlo e inyectar su contenido íntegro en el tope de su prompt/memoria activa de trabajo actual. Esto garantiza que el foco, los descubrimientos previos y la directiva se transfieran sin importar si la ventana de contexto del LLM fue compactada o purgada.
+- Tras inyectar el contenido en su memoria, el orquestador DEBE eliminar (borrar) el archivo `handoff-state.md` para evitar ensuciar transiciones futuras de la misma etapa.
+
 ## Los tres veredictos
 
 **Entra.** Todas las entradas existen y están vigentes.

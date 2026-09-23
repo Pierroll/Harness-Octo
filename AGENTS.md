@@ -96,6 +96,8 @@ vocabulario por etapa.
     Quien mantiene el arnés convierte issues en PRs, y el cambio le llega a todos por el
     submódulo. Ver `skills/friction-log/`.
 
+13. **Preflight Check (Gatekeeper Cero Alucinaciones).** Antes de iniciar trabajo de código o análisis estructural, el orquestador DEBE detenerse y ejecutar un *Preflight Check*: verificar y reportar si las dependencias base de OCTO (Engram, Graphify, GitHub CLI) están instanciadas en el entorno local del proyecto. Si falta alguna, es OBLIGATORIO detenerse, informarlo y pedir permiso explícito al usuario para configurar o instanciar el componente faltante (ej. crear el repo vía gh, instanciar el grafo). Trabajar a ciegas sin este seteo está prohibido.
+
 ## Dónde vive cada skill
 
 | Necesitas | Skill |
@@ -125,7 +127,7 @@ vocabulario por etapa.
 
 Propuesta → [E1] reconstruir el problema → temas por entender, supuestos y riesgos, y temas
 por negociar → kickoff (escuchar) → equipo, entornos y accesos →
-cronograma de delivery + backlog → *relevamiento* → [E2]
+cronograma de delivery + backlog → *relevamiento* → [E1.5 Research] investigación técnica, viabilidad y evaluación de herramientas externas (research-findings.md) → *relevamiento* → [E2]
 sesiones (entendimiento por sesión, inventarios y riesgos) → To-Be y diagrama de
 arquitectura → tabla de riesgos → RF light → negociación del alcance con el cliente → RF
 full → cronograma tentativo → entendimiento para diseño → *relevamiento* → [E3] UI/UX →

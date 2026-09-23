@@ -5,6 +5,9 @@ description: Inicializa la sesión de mantenimiento OCTO, verificando el entorno
 
 # Octo Init
 
+## PASO 0 (Hidratación de Persona)
+- El orquestador DEBE leer silenciosamente el archivo `persona.md` ubicado en la raíz del repositorio del arnés.
+- Inyecta el contenido de la voz, tono y reglas de interacción (Tech Lead Senior / Mentorship) directamente en tu prompt de sistema activo para que esta personalidad rija todas tus interacciones y explicaciones de trade-offs de aquí en adelante.
 ## PASO A (Contexto base)
 - Carga el caso actual.
 
