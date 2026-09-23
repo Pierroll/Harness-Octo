@@ -101,7 +101,7 @@ dueño y fecha.
 ### A7. Relevamiento es el documento de traspaso interno
 
 Es lo que escribe quien hizo el discovery para que el PM que toma el proyecto en la etapa
-4 sepa qué pasó. Es la palabra que se usa en Codeable y se respeta.
+4 sepa qué pasó. Es la palabra que se usa en OCTO y se respeta.
 
 Lleva lo que ningún artefacto guarda hoy: quién decide de verdad del lado del cliente y
 quién solo firma, qué se prometió de palabra fuera del contrato, dónde el cliente es
@@ -289,7 +289,7 @@ historias o agregar cuatro dos semanas después cuesta menos que esperar.
 
 *Reemplaza el orden de A13.* Por una razón comercial y una técnica. La comercial: al
 cliente se le muestra valor desde el primer día, y nadie ve valor en un modelo de datos.
-La técnica: en Codeable se trabaja como startup, el esquema crece por migraciones a medida
+La técnica: en OCTO se trabaja como startup, el esquema crece por migraciones a medida
 que el producto se define, y no hay modelo cerrado el día uno.
 
 Los dos caminos no se bloquean y pueden ir en paralelo. La revisión con el equipo se mueve
@@ -400,7 +400,7 @@ la galería quedan fuera por ahora.
 
 ### A32. Las imágenes se generan con OpenAI
 
-Claude no genera imágenes. La clave es de Codeable, va en la variable de entorno
+Claude no genera imágenes. La clave es de OCTO, va en la variable de entorno
 `OPENAI_API_KEY` de la máquina de cada PM y nunca en el repo; la cuenta necesita verificación
 de organización y un límite de gasto. Las imágenes se guardan en el repo en JPEG comprimido
 y calidad media, unos cientos de KB cada una y pocos megas por proyecto. Tres límites conocidos, y son la razón de que la

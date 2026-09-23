@@ -2,9 +2,9 @@
 name: requisitos-full
 description: >
   Genera el documento COMPLETO de Requisitos Funcionales y No Funcionales de un proyecto
-  de Codeable Labs, con ficha detallada por requisito: historia de usuario, actor, rol,
+  de OCTO, con ficha detallada por requisito: historia de usuario, actor, rol,
   dependencias, interfaz, flujo de interacción y criterios de aceptación en formato
-  Dado/Cuando/Entonces. Entrega un .docx con la plantilla corporativa (solo logo Codeable
+  Dado/Cuando/Entonces. Entrega un .docx con la plantilla corporativa (solo logo OCTO
   Labs, sin logo de cliente). Activa SIEMPRE que el usuario pida "requisitos full",
   "requisitos completos", "requisitos detallados", "historias de usuario", "criterios de
   aceptación", "Dado/Cuando/Entonces", "Gherkin", "user stories", "requisitos con flujo",
@@ -66,7 +66,7 @@ Recopila todo el contexto disponible antes de redactar:
 - Documentos de Google Drive que el usuario mencione (`google_drive_search` /
   `google_drive_fetch`).
 - Contexto ya presente en la conversación (resúmenes de `meeting-summary`, notas de
-  `propuesta-labs`, agendas de `codeable-kickoff-discovery`).
+  `propuesta-labs`, agendas de `OCTO-kickoff-discovery`).
 - Si el usuario alude a sesiones previas ("el discovery de la semana pasada"), busca en
   el historial con `conversation_search` / `recent_chats` antes de preguntar.
 
@@ -210,7 +210,7 @@ verifica**, con el umbral y las condiciones de medición. Cumple SMART: sin "rá
 **Estructura:**
 
 ```
-├── Header: SOLO logo Codeable Labs (flotante, izquierda)
+├── Header: SOLO logo OCTO (flotante, izquierda)
 ├── Título: REQUISITOS FUNCIONALES Y NO FUNCIONALES     (sz=34, bold)
 ├── Subtítulo: NOMBRE DEL PROYECTO EN MAYÚSCULAS        (sz=24, bold)
 ├── Línea de versión: Versión X.Y — Mes Año | nota      (sz=20)
@@ -257,9 +257,9 @@ verifica**, con el umbral y las condiciones de medición. Cumple SMART: sin "rá
 - **Sin bullets.** Los flujos son párrafos numerados a mano dentro de la celda.
 - **Sin saltos de página manuales.** El contenido fluye; las bandas marcan los cortes.
 
-## Header — solo logo Codeable Labs
+## Header — solo logo OCTO
 
-Header flotante con **únicamente** `assets/codeable-logo.png`, anclado a la izquierda:
+Header flotante con **únicamente** `assets/OCTO-logo.png`, anclado a la izquierda:
 
 ```javascript
 new Header({ children: [new Paragraph({ children: [

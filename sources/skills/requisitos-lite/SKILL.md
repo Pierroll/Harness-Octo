@@ -2,7 +2,7 @@
 name: requisitos-lite
 description: >
   Genera el documento de Requerimientos Funcionales y No Funcionales de un proyecto de
-  Codeable Labs, en formato .docx con la plantilla corporativa (solo logo Codeable Labs,
+  OCTO, en formato .docx con la plantilla corporativa (solo logo OCTO,
   sin logo de cliente). Activa SIEMPRE que el usuario pida "requisitos funcionales",
   "requisitos no funcionales", "requerimientos funcionales", "RF y RNF", "catálogo de
   requisitos", "levantar los requisitos", "armar los requisitos del discovery",
@@ -20,7 +20,7 @@ description: >
 Este skill convierte insumos de discovery (transcripciones, actas, notas, PRDs,
 propuestas) en un documento formal de **Requerimientos Funcionales (RF) y Requerimientos
 No Funcionales (RNF)**, redactados según ISO/IEC/IEEE 29148:2018 y entregados en un
-único `.docx` con la plantilla visual corporativa de Codeable Labs.
+único `.docx` con la plantilla visual corporativa de OCTO.
 
 Se llama "lite" porque es la versión ligera del levantamiento de requisitos: produce el
 documento de RF/RNF listo para el cliente, sin la maquinaria completa de un SRS. A
@@ -49,7 +49,7 @@ este skill.
   formato correcto.** Pártelo de aquí: copia el script, reemplaza el contenido del array
   `children` y ejecuta. Contiene los helpers `titulo`, `subtitulo`, `meta`,
   `moduloHeader`, `subseccionHeader`, `req` y `nota` ya calibrados.
-- `/mnt/skills/user/codeable-plantilla-docs/SKILL.md` — Referencia de la paleta y
+- `/mnt/skills/user/OCTO-plantilla-docs/SKILL.md` — Referencia de la paleta y
   tipografía corporativa (Inter, `#000000`, `#F5F9FF`, `#3A83F7`, A4, márgenes).
   Consúltalo si necesitas contexto adicional, pero **no uses sus helpers `dataTable` ni
   los bullets** en este skill.
@@ -170,7 +170,7 @@ una sola fila que funcionan como encabezados. Los requisitos son párrafos corri
 **Estructura:**
 
 ```
-├── Header: SOLO logo Codeable Labs (flotante, izquierda)
+├── Header: SOLO logo OCTO (flotante, izquierda)
 ├── Párrafo: REQUERIMIENTOS FUNCIONALES Y NO FUNCIONALES     (sz=40, bold)
 ├── Párrafo: NOMBRE DEL PROYECTO EN MAYÚSCULAS               (sz=28, bold)
 ├── Párrafo: Versión X.Y — Mes Año | nota de alcance         (sz=20)
@@ -221,16 +221,16 @@ una sola fila que funcionan como encabezados. Los requisitos son párrafos corri
 - El título del requisito va dentro del run en bold junto con el ID, terminando en
   dos puntos. La descripción arranca con un espacio en el segundo run.
 
-## Header — solo logo Codeable Labs
+## Header — solo logo OCTO
 
-Este skill usa el mismo header flotante que `codeable-plantilla-docs`, pero **sin el
-logo del cliente/Vanguard**. Usa únicamente `assets/codeable-logo.png` (Codeable
+Este skill usa el mismo header flotante que `OCTO-plantilla-docs`, pero **sin el
+logo del cliente/Vanguard**. Usa únicamente `assets/OCTO-logo.png` (OCTO
 Labs), anclado a la izquierda:
 
 ```javascript
 new Header({ children: [new Paragraph({ children: [
   new ImageRun({
-    data: logoCodeable, // assets/codeable-logo.png
+    data: logoCodeable, // assets/OCTO-logo.png
     type: "png",
     transformation: { width: 193, height: 16 },
     floating: {
@@ -244,9 +244,9 @@ new Header({ children: [new Paragraph({ children: [
 
 No agregues ningún `ImageRun` adicional en el header (no hay logo de cliente en este
 skill). El resto del documento (título, subtítulo, secciones, tablas, bullets) usa
-exactamente los mismos helpers que `codeable-plantilla-docs`.
+exactamente los mismos helpers que `OCTO-plantilla-docs`.
 
-Asset: `assets/codeable-logo.png`.
+Asset: `assets/OCTO-logo.png`.
 
 ---
 

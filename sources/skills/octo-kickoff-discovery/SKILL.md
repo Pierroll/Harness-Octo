@@ -1,7 +1,7 @@
 ---
-name: codeable-kickoff-discovery
+name: OCTO-kickoff-discovery
 description: >
-  Genera el documento de arranque de un proyecto de Codeable Labs: un .docx único con la
+  Genera el documento de arranque de un proyecto de OCTO: un .docx único con la
   agenda del Kickoff seguida de las agendas de todos los Discoveries necesarios. Activa
   SIEMPRE que el usuario mencione "kickoff", "discovery", "agenda de reunión", "primera
   reunión con el cliente", "sesiones de levantamiento", "reunión de arranque", "discovery
@@ -9,17 +9,17 @@ description: >
   "documento de arranque", o cualquier variante que implique armar la estructura de las
   primeras reuniones de un proyecto. También aplica cuando el usuario quiera transformar
   contexto comercial (propuesta, transcripción, notas) en agendas listas para presentar al
-  cliente. Produce un único .docx con la plantilla Codeable y tono de PM senior:
+  cliente. Produce un único .docx con la plantilla OCTO y tono de PM senior:
   estratégico, no operativo, con preguntas que desbloquean cada frente y compromisos
   bilaterales al cierre. Úsalo incluso si el usuario solo dice "arma las reuniones con el
   cliente" sin mencionar "kickoff" o "discovery" explícitamente.
 ---
 
-# Kickoff & Discovery — Codeable Labs
+# Kickoff & Discovery — OCTO
 
 Este skill genera **un único documento `.docx`** que contiene la agenda del Kickoff y
 las agendas de todos los Discoveries del proyecto, siguiendo el formato corporativo de
-Codeable Labs. El cliente luego separa las secciones en pestañas de Google Docs.
+OCTO. El cliente luego separa las secciones en pestañas de Google Docs.
 
 ## Cuándo usar este skill
 
@@ -62,7 +62,7 @@ Las agendas se diseñan para un PM senior que proyecta credibilidad y confianza.
 
 ### 2. Cada sesión cierra con compromisos bilaterales
 Toda agenda termina con un bloque "Cierre — compromisos de ambos lados" que detalla:
-- Qué se compromete Codeable Labs a entregar.
+- Qué se compromete OCTO a entregar.
 - Qué se compromete el cliente a entregar.
 
 ### 3. Los discoveries listan insumos previos al inicio
@@ -111,7 +111,7 @@ Antes de generar, identificar:
 
 ### Paso 2 — Decidir la lista de discoveries
 
-Los frentes típicos en un proyecto de Codeable Labs son:
+Los frentes típicos en un proyecto de OCTO son:
 
 - **d1 — Negocio (módulo principal)**: el módulo más crítico del proyecto desde la perspectiva de negocio.
 - **d2 — Finanzas**: si el proyecto toca pagos, facturación, conciliación.
@@ -136,7 +136,7 @@ Lee la plantilla de cada tipo de sesión antes de generar:
 
 ### Paso 4 — Generar el .docx unificado
 
-Lee `/mnt/skills/user/codeable-plantilla-docs/SKILL.md` para los detalles de formato
+Lee `/mnt/skills/user/OCTO-plantilla-docs/SKILL.md` para los detalles de formato
 visual exacto (fuentes, colores, tablas, bullets, header con logos).
 
 **Estructura del documento unificado:**
@@ -168,10 +168,10 @@ visual exacto (fuentes, colores, tablas, bullets, header con logos).
 [DISCOVERY #2 ... N]
 ```
 
-**Detalles visuales críticos** (heredados de codeable-plantilla-docs):
+**Detalles visuales críticos** (heredados de OCTO-plantilla-docs):
 
 - Página A4, fuente Inter, márgenes corporativos.
-- Header con logos Codeable Labs (izquierda) y cliente (derecha) — el logo del cliente cambia por proyecto.
+- Header con logos OCTO (izquierda) y cliente (derecha) — el logo del cliente cambia por proyecto.
 - Secciones numeradas con `seccionHeader` (fondo negro, texto blanco 10pt bold).
 - Sub-headers de día con `diaHeader` (fondo azul claro, bordes top/bottom azul).
 - Tablas de datos con `dataTable` (header azul claro, filas sin borde excepto la última).
@@ -216,7 +216,7 @@ Al entregar:
 ### Sobre la sección 5 "Objetivo de esta sesión" (solo en discoveries)
 - 4-5 bullets de outcomes esperados al cerrar la sesión.
 - Empiezan con verbos accionables: *"Identificar…"*, *"Definir…"*, *"Establecer…"*, *"Determinar…"*.
-- El último bullet siempre dice qué debe poder hacer el equipo de Codeable después de la sesión.
+- El último bullet siempre dice qué debe poder hacer el equipo de OCTO después de la sesión.
 
 ### Sobre los stakeholders en la tabla del kickoff
 - Formato de fila: `d[N] ⇒ [Frente] - [tema] ([fecha si está confirmada])` | `[nombres separados por -]`

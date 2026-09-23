@@ -23,7 +23,7 @@ explica qué llega ya resuelto.
 huecos conocidos: por dónde entra cada lead, quién toma la primera llamada según de dónde
 venga el contacto, y qué más pasa entre esa llamada y la propuesta. Sirve para ubicarse y
 para saber qué preguntar cuando se releve en serio. Hasta entonces, no se presenta como el
-proceso de Codeable ni se le muestra al cliente.
+proceso de OCTO ni se le muestra al cliente.
 
 El lead llega casi siempre por LinkedIn, y también por referido o por alguien de un cliente
 que ya tenemos. Después viene una llamada corta, de unos quince minutos: nos presentamos,

@@ -10,13 +10,13 @@ description: >
   "documento de arranque", o cualquier variante que implique armar la estructura de las
   primeras reuniones de un proyecto. También aplica cuando el usuario quiera transformar
   contexto comercial (propuesta, transcripción, notas) en agendas listas para presentar al
-  cliente. Produce .docx con la plantilla Codeable y tono de PM senior:
+  cliente. Produce .docx con la plantilla OCTO y tono de PM senior:
   estratégico, no operativo, con preguntas que desbloquean cada frente y compromisos
   bilaterales al cierre. Úsalo incluso si el usuario solo dice "arma las reuniones con el
   cliente" sin mencionar "kickoff" o "discovery" explícitamente.
 ---
 
-# Kickoff & Discovery — Codeable Labs
+# Kickoff & Discovery — OCTO
 
 Este skill genera los documentos de arranque del proyecto en `.docx`, con nuestro formato
 corporativo. Son **dos documentos en dos momentos distintos**, y cuál toca depende de si el
@@ -249,10 +249,10 @@ márcalo para maquetar después.
 [DISCOVERY #2 ... N]
 ```
 
-**Detalles visuales críticos** (heredados de codeable-plantilla-docs):
+**Detalles visuales críticos** (heredados de OCTO-plantilla-docs):
 
 - Página A4, fuente Inter, márgenes corporativos.
-- Header con logos Codeable Labs (izquierda) y cliente (derecha) — el logo del cliente cambia por proyecto.
+- Header con logos OCTO (izquierda) y cliente (derecha) — el logo del cliente cambia por proyecto.
 - Secciones numeradas con `seccionHeader` (fondo negro, texto blanco 10pt bold).
 - Sub-headers de día con `diaHeader` (fondo azul claro, bordes top/bottom azul).
 - Tablas de datos con `dataTable` (header azul claro, filas sin borde excepto la última).

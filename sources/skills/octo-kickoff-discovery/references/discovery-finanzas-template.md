@@ -18,7 +18,7 @@ del cliente.
 ### Sección 1 — Datos del Proyecto
 
 - **Cliente:** [cliente]
-- **Project Manager:** [PM] | **Líder Codeable:** Paulo Tijero + Tech Lead
+- **Project Manager:** [PM] | **Líder OCTO:** Paulo Tijero + Tech Lead
 - **Participantes esperados:** [Dueño financiero] + equipo contable/tesorería
 - **Duración estimada:** 45 minutos
 
@@ -77,7 +77,7 @@ Encabezado del día:
 
 #### Bloque 5 (10 min) — Cierre — compromisos de la sesión
 
-Texto en cursiva: *Codeable Labs se compromete a:*
+Texto en cursiva: *OCTO se compromete a:*
 
 - Enviar flujo dibujado [origen→destino] en 48h.
 - Definir contrato de datos entre el portal y [sistema financiero, ej: SAP].
@@ -95,7 +95,7 @@ Texto en cursiva: *[Cliente] se compromete a:*
 - Definir las reglas de validación automática que el portal debe ejecutar antes de aceptar una factura, evitando reprocesos por errores conocidos.
 - Establecer las políticas de retención e impuestos que el sistema debe modelar para producir constancias precisas.
 - Determinar qué información financiera es confidencial y NO debe ser visible al [usuario externo].
-- El equipo de Codeable debe poder diseñar el contrato de integración con [sistema financiero] y los wireframes del estado de cuenta.
+- El equipo de OCTO debe poder diseñar el contrato de integración con [sistema financiero] y los wireframes del estado de cuenta.
 
 ---
 

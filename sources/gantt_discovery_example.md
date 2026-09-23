@@ -1,13 +1,13 @@
 # GANTT DEL DISCOVERY: CUATRO SEMANAS
 
-**Azul: actividad conjunta con Credialianza. Gris: trabajo interno de Codeable Labs**
+**Azul: actividad conjunta con Credialianza. Gris: trabajo interno de OCTO**
 
 *Las fechas se recalculan solas al cambiar la fecha de inicio en la hoja `0. Cuadro Control`.*
 
 | # | Actividad | Tipo | Fechas |
 |---|---|---|---|
 | **SEMANA 1: LEVANTAMIENTO PRESENCIAL** | | | **lun 10 – vie 14** |
-| 1 | Viaje del equipo de Codeable Labs a Bogotá | Interna | lun 10 |
+| 1 | Viaje del equipo de OCTO a Bogotá | Interna | lun 10 |
 | 2 | Kickoff del Discovery | Conjunta | lun 10 |
 | 3 | Confirmación de accesos, insumos y logística de la semana | Conjunta | lun 10 |
 | 4 | Sesión d1: originación y ciclo del asesor | Conjunta | lun 10 |
@@ -64,7 +64,7 @@
 ## Leyenda
 
 - 🟦 **Conjunta** — Actividad conjunta con Credialianza
-- ⬜ **Interna** — Trabajo interno de Codeable Labs
+- ⬜ **Interna** — Trabajo interno de OCTO
 - 🟥 **No laborable** — Día no laborable en Colombia
 
 > El lunes de la semana 2 es festivo en Colombia (Asunción de la Virgen, trasladada al 17 de agosto de 2026 por la Ley Emiliani), por eso esa semana arranca el martes. Si se cambia la fecha de inicio en la hoja `0. Cuadro Control`, hay que revisar de nuevo los festivos.

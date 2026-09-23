@@ -71,7 +71,7 @@ alguien de adentro pregunta qué se dijo en la sesión 3, se lee el acta en dos 
 de barrer un transcript de una hora.
 
 **Enviarla al cliente es decisión del PM, proyecto por proyecto.** Hoy no es una práctica
-estandarizada en Codeable y el arnés no la obliga: producir el acta no bloquea nada y no
+estandarizada en OCTO y el arnés no la obliga: producir el acta no bloquea nada y no
 enviarla tampoco. Es un documento que ayuda, no un trámite.
 
 `discovery/2-analysis/outputs/d<N>-acta.md`:

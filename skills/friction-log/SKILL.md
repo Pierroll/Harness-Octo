@@ -2,7 +2,7 @@
 name: friction-log
 description: >
   Escribe una fricción del arnés en el momento en que ocurre y la lleva como issue al repo
-  `codeable-labs/harness-product`, sin que el PM tenga que hacer nada. Corre solo, disparado
+  `OCTO-labs/harness-product`, sin que el PM tenga que hacer nada. Corre solo, disparado
   por otros skills: cuando un skill falla de una forma que no está en sus "Modos de fallo",
   cuando `checkpoint-review` encuentra un criterio ambiguo, cuando `reopen-artifact`
   responde "esto debió detectarse antes", y al cerrar cada sesión con `session-log`. También
@@ -53,7 +53,7 @@ campo Sistema actual salió vacío en 6 de 8 RF; agregar la pregunta al paso 1" 
 Apenas se escribe la fila, el agente abre el issue:
 
 ```bash
-gh issue create -R codeable-labs/harness-product \
+gh issue create -R OCTO-labs/harness-product \
   --title "<skill o etapa>: <qué pasó, en una línea>" \
   --body "$(cat <<'EOF'
 **Proyecto:** <nombre del discovery> · **Fecha:** <YYYY-MM-DD> · **Etapa/skill:** <...>
@@ -75,13 +75,13 @@ una fricción es un reporte, no un arreglo, y nadie hace commit directo a la bas
 proyecto. Quien mantiene el arnés convierte issues en PRs.
 
 Si `gh` no está instalado, no está autenticado, o el PM no tiene permiso en
-`codeable-labs/harness-product` (el comando devuelve 403 o 404: el repo es privado y hace
+`OCTO-labs/harness-product` (el comando devuelve 403 o 404: el repo es privado y hace
 falta ser colaborador), la fila queda con estado `abierta` e issue `no enviada: <razón>`.
 `session-log` lo avisa al cerrar: "hay N fricciones sin enviar". No se inventa un número
 de issue. Pedir el acceso al repo es un pendiente del PM con quien mantiene el arnés.
 
 Antes de abrir un issue, buscar si ya existe uno igual: `gh issue list -R
-codeable-labs/harness-product --search "<skill>"`. Si existe, se comenta ahí con el
+OCTO-labs/harness-product --search "<skill>"`. Si existe, se comenta ahí con el
 proyecto y la fecha en vez de abrir uno nuevo. Dos proyectos con la misma fricción es la
 señal más fuerte que el arnés puede recibir, y se pierde si quedan en dos issues.
 

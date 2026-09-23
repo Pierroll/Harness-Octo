@@ -96,7 +96,7 @@ Ejemplo de filas (adaptar al proyecto):
 
 #### Bloque 8 (5 min) — Cierre - compromisos de ambos lados
 
-Texto introductorio en cursiva: *Codeable Labs se compromete a:*
+Texto introductorio en cursiva: *OCTO se compromete a:*
 
 - Enviar resumen de esta reunión antes del cierre del día de hoy.
 - Proponer horarios para las [N] sesiones de Discovery en las próximas 24 horas.

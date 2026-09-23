@@ -19,7 +19,7 @@ analytics, proveedores externos vs servicios básicos).
 ### Sección 1 — Datos del Proyecto
 
 - **Cliente:** [cliente]
-- **Project Manager:** [PM] | **Líder Codeable:** [quien lidere desde Codeable]
+- **Project Manager:** [PM] | **Líder OCTO:** [quien lidere desde OCTO]
 - **Participantes esperados:** [Dueños del frente del lado del cliente]
 - **Duración estimada:** 45 minutos
 
@@ -68,7 +68,7 @@ Solo si aplica.
 
 #### Bloque 5 (10 min) — Cierre — compromisos de la sesión
 
-Texto en cursiva: *Codeable Labs se compromete a:*
+Texto en cursiva: *OCTO se compromete a:*
 - [3-4 compromisos concretos]
 
 Texto en cursiva: *[Cliente] se compromete a:*

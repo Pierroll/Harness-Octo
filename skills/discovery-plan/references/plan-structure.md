@@ -52,7 +52,7 @@ con leyenda al final.
 ## Leyenda
 
 - **Conjunta** — actividad con el cliente.
-- **Interna** — trabajo interno de Codeable Labs.
+- **Interna** — trabajo interno de OCTO.
 - **No laborable** — feriado; se inserta como fila propia cuando cae dentro del rango.
 
 ## Notas

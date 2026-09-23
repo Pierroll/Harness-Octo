@@ -42,7 +42,7 @@ la que vive, incluidos los que solo aplican según la modalidad declarada en el
 frenar el cierre.** Sale de las notas que ya se escribieron y sirve para dos fines
 concretos: que exista cuando el cliente la pide, y que alguien de adentro sepa qué pasó en
 la sesión 3 sin leer un transcript de una hora. Enviarla al cliente queda como decisión
-del PM proyecto por proyecto: hoy no es una práctica estandarizada en Codeable y el arnés
+del PM proyecto por proyecto: hoy no es una práctica estandarizada en OCTO y el arnés
 la deja abierta.
 
 ## Qué tiene que tener el To-Be

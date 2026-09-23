@@ -72,7 +72,7 @@ artefacto anota en su cabecera con qué modelo se produjo: es lo que mira el che
    restricciones) y, si el proyecto hizo mockups de viabilidad, sus `feasibility-*.md`:
    son insumo de este paso, no lo reemplazan.
 4. Node 18 o superior (`node --version`) y la clave de OpenAI, que se verifica antes del
-   paso 2c: `OPENAI_API_KEY` en el entorno o `~/.config/codeable/openai-key`. Si no está,
+   paso 2c: `OPENAI_API_KEY` en el entorno o `~/.config/OCTO/openai-key`. Si no está,
    el skill lo dice y se detiene en el paso 2b. No hay versión "sin imágenes" que se
    disimule como completa; la excepción está en modos de fallo.
 5. El modelo de la sesión. Si no es Fable ni Opus, avisar y no producir el inventario.
@@ -335,7 +335,7 @@ sesión; el plugin de Figma del mismo nombre queda como camino manual si el MCP 
 
 ## Cómo se generan las imágenes
 
-Antes de la primera: `[ -n "$OPENAI_API_KEY" ] || [ -s ~/.config/codeable/openai-key ]`.
+Antes de la primera: `[ -n "$OPENAI_API_KEY" ] || [ -s ~/.config/OCTO/openai-key ]`.
 Si falla, parar y decir cómo ponerla (ver modos de fallo).
 
 Un subagente por imagen, todos lanzados en un solo mensaje para que corran en paralelo,
@@ -437,7 +437,7 @@ capturas por viewport.
 
 - **No hay clave de OpenAI.** Parar en el paso 2b y decir cómo ponerla: `export
   OPENAI_API_KEY=...` en `~/.zshrc` y abrir una terminal nueva, o el archivo
-  `~/.config/codeable/openai-key` con permisos 600. No seguir "en texto" como si fuera lo
+  `~/.config/OCTO/openai-key` con permisos 600. No seguir "en texto" como si fuera lo
   mismo.
 - **403, organización sin verificar.** El script lo dice. Se verifica en el panel de OpenAI
   y se espera hasta quince minutos.

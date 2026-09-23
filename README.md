@@ -5,7 +5,7 @@ Nuestro arnés de discovery. Convierte las etapas 1 a 3 del ciclo de desarrollo
 mismos artefactos, mismos checkpoints en todos los proyectos, con las diferencias de
 cada cliente declaradas aparte.
 
-**Para qué existe este repo.** Es el estándar que se espera de Codeable de ahora en
+**Para qué existe este repo.** Es el estándar que se espera de OCTO de ahora en
 adelante, no un registro de por dónde vamos. Para llegar a un arnés hay que documentar y
 estandarizar antes el proceso, y eso es lo que está pasando ahora: parte de lo que está
 escrito en este repo describe cómo ya trabajamos, y parte propone cómo deberíamos
@@ -45,7 +45,7 @@ base: `git submodule update --remote harness` y commit.
 
 La máquina del PM necesita Node 18 o superior (los `.docx`, los `.xlsx` y los scripts de
 `skills/ui-design/`), `pandoc` si algún RF solo existe en Word, y la variable
-`OPENAI_API_KEY` para las imágenes del paso de UI/UX. La clave es de Codeable, va en el
+`OPENAI_API_KEY` para las imágenes del paso de UI/UX. La clave es de OCTO, va en el
 perfil de la shell y nunca en el repo.
 
 ### Autenticación con GitHub (Zero-Knowledge)

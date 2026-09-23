@@ -17,7 +17,7 @@ Para discoveries que definen hosting, redes, VPN, ambientes y configuración clo
 ### Sección 1 — Datos del Proyecto
 
 - **Cliente:** [cliente]
-- **Project Manager:** [PM] | **Líder Codeable:** Paulo Tijero + DevOps
+- **Project Manager:** [PM] | **Líder OCTO:** Paulo Tijero + DevOps
 - **Participantes esperados:** [Jefe de Tecnología/Infraestructura] + equipo de TI del cliente
 - **Duración estimada:** 45 minutos
 
@@ -64,11 +64,11 @@ Encabezado del día:
 - Puertos a habilitar para [sistema externo, ej: Service Layer de SAP B1 → puerto 50000].
 - Política de firewall y reglas de acceso.
 - ¿Quién aprueba la habilitación de puertos y la configuración de VPN dentro de [cliente]?
-- **Pregunta clave:** *¿El equipo de TI tiene experiencia configurando VPN site-to-site o necesitan acompañamiento de Codeable?*
+- **Pregunta clave:** *¿El equipo de TI tiene experiencia configurando VPN site-to-site o necesitan acompañamiento de OCTO?*
 
 #### Bloque 4 (10 min) — Cierre — compromisos de la sesión
 
-Texto en cursiva: *Codeable Labs se compromete a:*
+Texto en cursiva: *OCTO se compromete a:*
 
 - Enviar diagrama de infraestructura propuesto y estimación de costos mensuales en 48h.
 - Compartir checklist técnico para creación de ambientes dev/prod.
@@ -76,7 +76,7 @@ Texto en cursiva: *Codeable Labs se compromete a:*
 
 Texto en cursiva: *[Cliente] se compromete a:*
 
-- Confirmar estado de la suscripción [cloud] y habilitar el acceso para el equipo de Codeable.
+- Confirmar estado de la suscripción [cloud] y habilitar el acceso para el equipo de OCTO.
 - Iniciar gestión de aprobación interna para habilitación de puertos y VPN.
 - Compartir diagrama de red actual antes del próximo viernes.
 
@@ -86,7 +86,7 @@ Texto en cursiva: *[Cliente] se compromete a:*
 - Dimensionar los recursos iniciales y producir una estimación de costo mensual realista para que [cliente] pueda presupuestar.
 - Establecer responsables y plazos para la habilitación de la VPN, los ambientes y los accesos críticos.
 - Identificar dependencias técnicas que puedan bloquear el inicio del desarrollo.
-- El equipo de Codeable debe poder iniciar la configuración de ambientes en [cloud] sin esperar nuevas decisiones de infraestructura.
+- El equipo de OCTO debe poder iniciar la configuración de ambientes en [cloud] sin esperar nuevas decisiones de infraestructura.
 
 ---
 

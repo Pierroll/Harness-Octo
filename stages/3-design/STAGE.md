@@ -99,7 +99,7 @@ A27).
 
 Los pasos que deciden (inventario, direcciones, filtro, trazabilidad) corren con el modelo
 frontera; el HTML y el CSS, con Opus en subagentes; las imágenes las genera OpenAI con la
-clave de Codeable, que va en la máquina del PM y nunca en el repo.
+clave de OCTO, que va en la máquina del PM y nunca en el repo.
 
 Si el proyecto entrega mockups como demostración de viabilidad en una etapa anterior
 (`skills/feasibility-demo/`), esos mockups son insumo de este paso, no lo reemplazan.

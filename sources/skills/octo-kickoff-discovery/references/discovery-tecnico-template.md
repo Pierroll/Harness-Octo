@@ -18,7 +18,7 @@ SAP, Oracle, Microsoft Dynamics, sistemas propietarios, ERPs en general.
 ### Sección 1 — Datos del Proyecto
 
 - **Cliente:** [cliente]
-- **Project Manager:** [PM] | **Líder Codeable:** Paulo Tijero (Head of Delivery) + Tech Lead
+- **Project Manager:** [PM] | **Líder OCTO:** Paulo Tijero (Head of Delivery) + Tech Lead
 - **Participantes esperados:** [Jefes de TI del cliente] + **proveedor [sistema] de [cliente]** (crítico)
 - **Duración estimada:** 60 minutos
 
@@ -76,14 +76,14 @@ Encabezado del día:
 
 Aplica cuando el cliente está migrando o planeando upgrade:
 - ¿Cuál es la fecha confirmada de migración a [sistema futuro]?
-- ¿Qué parte de la migración es responsabilidad del proveedor [sistema] y qué parte queda para Codeable?
+- ¿Qué parte de la migración es responsabilidad del proveedor [sistema] y qué parte queda para OCTO?
 - Estrategia: el portal debe seguir operando durante la transición sin downtime.
 - Costo de la asistencia de migración (si ya está incluido en propuesta, mencionarlo).
 - **Pregunta clave:** *¿Quién es el contacto técnico del proveedor [sistema] que será nuestra contraparte durante la migración?*
 
 #### Bloque 5 (15 min) — Cierre — compromisos de la sesión
 
-Texto en cursiva: *Codeable Labs se compromete a:*
+Texto en cursiva: *OCTO se compromete a:*
 
 - Enviar plan técnico de integración + diagrama de arquitectura propuesto en 48h.
 - Diseñar la capa de abstracción [sistema] a prueba de [migración futura].
@@ -102,7 +102,7 @@ Texto en cursiva: *[Cliente] se compromete a:*
 - Mapear cada endpoint que el portal necesita consumir o exponer, confirmando disponibilidad y restricciones.
 - Definir el contrato de comunicación con el proveedor [sistema] y los tiempos de respuesta esperados.
 - Establecer la estrategia de transición a [sistema futuro] sin interrumpir la operación del portal.
-- El equipo de Codeable debe poder empezar a construir la capa de integración con confianza técnica y sin dependencias bloqueantes.
+- El equipo de OCTO debe poder empezar a construir la capa de integración con confianza técnica y sin dependencias bloqueantes.
 
 ---
 

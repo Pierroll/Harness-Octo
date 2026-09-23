@@ -98,7 +98,9 @@ vocabulario por etapa.
 
 13. **Preflight Check (Gatekeeper Cero Alucinaciones).** Antes de iniciar trabajo de código o análisis estructural, el orquestador DEBE detenerse y ejecutar un *Preflight Check*: verificar y reportar si las dependencias base de OCTO (Engram, Graphify, GitHub CLI) están instanciadas en el entorno local del proyecto. Si falta alguna, es OBLIGATORIO detenerse, informarlo y pedir permiso explícito al usuario para configurar o instanciar el componente faltante (ej. crear el repo vía gh, instanciar el grafo). Trabajar a ciegas sin este seteo está prohibido.
 
-14. **Seguridad de Ramas (PR-Only Estricto).** Queda terminantemente prohibido hacer `git push` directo a `main` o a la rama de producción. Toda tarea de mantenimiento, fix o feature DEBE salir empaquetada en un Pull Request formal, apoyado en el framework 4R. La seguridad y revisión cruzada están por encima de la velocidad.
+14. **Seguridad de Ramas y Gitflow (PR-Only Estricto).** Queda terminantemente prohibido hacer `git push` directo a `main`, `develop` o cualquier rama de producción/integración. Toda tarea (fix, feature, chore) DEBE trabajarse en una rama efímera (ej. `feature/ISSUE-123-nombre`) y salir empaquetada en un Pull Request formal apuntando a `develop` (o a la rama designada en Gitflow). La revisión cruzada (4R) está por encima de la velocidad.
+
+15. **Anclaje Absoluto (Anti-Bypass).** El orquestador y los agentes tienen **PROHIBIDO** saltarse los pasos del flujo del arnés. No pueden usar otros frameworks por encima de OCTO para "resolverlo más rápido". Todo issue debe ser validado contra `templates/abstract-issue.md`, debe pasar por la creación de rama y debe terminar en PR. Si el usuario pide "arreglarlo rápido directo en main", el agente debe negarse citando esta regla de seguridad arquitectónica.
 
 ## Dónde vive cada skill
 

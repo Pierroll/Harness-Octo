@@ -1,4 +1,4 @@
-# Las 5 reglas — base del harness de Codeable
+# Las 5 reglas — base del harness de OCTO
 
 Destiladas del repo [`yc-software/qm`](https://github.com/yc-software/qm) (MIT, agosto 2026),
 el harness de agentes que Y Combinator abrió al público. De ahí no tomamos código: su producto
@@ -32,8 +32,8 @@ mismo commit** que introduce la desviación.
 **Cómo lo aplicamos.**
 
 ```
-codeable-harness/          repo core
-  AGENTS.base.md           reglas comunes de Codeable
+OCTO-harness/          repo core
+  AGENTS.base.md           reglas comunes de OCTO
   skills/                  procedimientos compartidos (regla 5)
 
 proyecto-cliente-x/
@@ -147,7 +147,7 @@ llega a los demás.
 **Cómo lo aplicamos.**
 
 - **Core = todo lo que se repite**: patrones, procedimientos, skills, el `AGENTS.base.md`. Vive
-  en `codeable-harness`. Incluye lo de discovery —etapas 1 a 3 y el juicio humano— que es
+  en `OCTO-harness`. Incluye lo de discovery —etapas 1 a 3 y el juicio humano— que es
   donde está nuestra ventaja.
 - **Casuísticas del cliente**: viven en el repo del cliente, en una sola carpeta, no dispersas.
 - **"En git"** significa que puedes ver el diff de qué cambió en la config del cliente entre
@@ -181,7 +181,7 @@ del cliente antes de empujar.
 los proyectos importan por referencia, no copiando.
 
 **Por qué.** El discovery, cómo revisamos, cómo entregamos: hoy vive en documentos sueltos y en
-la cabeza de la gente. El know-how de Codeable no puede depender de quién esté en el proyecto.
+la cabeza de la gente. El know-how de OCTO no puede depender de quién esté en el proyecto.
 
 **La forma.**
 

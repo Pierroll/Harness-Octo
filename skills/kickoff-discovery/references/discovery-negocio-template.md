@@ -20,7 +20,7 @@ Nombre formal del proyecto.
 ### Sección 1 — Datos del Proyecto
 
 - **Cliente:** [cliente]
-- **Project Manager:** [PM] | **Líder Codeable:** Paulo Tijero (o quien lidere desde Codeable)
+- **Project Manager:** [PM] | **Líder OCTO:** Paulo Tijero (o quien lidere desde OCTO)
 - **Participantes esperados:** [Dueño de negocio] + [equipo relevante del cliente]
 - **Duración estimada:** 45 minutos
 
@@ -94,7 +94,7 @@ Encabezado del día con `diaHeader`:
 
 #### Bloque 5 (10 min) — Cierre — compromisos de la sesión
 
-Texto en cursiva: *Codeable Labs se compromete a:*
+Texto en cursiva: *OCTO se compromete a:*
 
 - Enviar minuta y flujo dibujado de la sesión en 48h.
 - Producir primer wireframe del módulo de [tema] para revisión en el siguiente sprint.
@@ -114,7 +114,7 @@ Lista de 4-5 bullets de outcomes esperados. Empiezan con verbos accionables:
 - Definir el listado definitivo de documentos exigidos, sus reglas de validación (vigencias) y si existen variaciones según el tipo de [usuario] o categoría.
 - Establecer quién aprueba, quién rechaza y cómo se gestiona la visibilidad de los [usuarios] entre las distintas empresas del grupo [cliente].
 - Determinar qué elementos son críticos (no-negociables) para que un [usuario] sea dado de alta en [sistema externo] sin intervención manual innecesaria.
-- El equipo de Codeable debe tener claridad en la información para que pueda diagramar el flujo técnico y los primeros prototipos funcionales del módulo de [tema].
+- El equipo de OCTO debe tener claridad en la información para que pueda diagramar el flujo técnico y los primeros prototipos funcionales del módulo de [tema].
 
 ---
 

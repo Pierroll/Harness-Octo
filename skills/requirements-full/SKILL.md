@@ -5,7 +5,7 @@ description: >
   nuestros proyectos, con ficha detallada por requisito: historia de usuario, actor, rol,
   dependencias, interfaz, flujo de interacción y criterios de aceptación en formato
   Dado/Cuando/Entonces. Deja el registro en markdown y entrega un .docx con la plantilla
-  corporativa (solo logo Codeable Labs, sin logo de cliente). Activa SIEMPRE que el
+  corporativa (solo logo OCTO, sin logo de cliente). Activa SIEMPRE que el
   usuario pida "requisitos full", "requisitos completos", "requisitos detallados",
   "historias de usuario", "criterios de aceptación", "Dado/Cuando/Entonces", "Gherkin",
   "user stories", "requisitos con flujo",
@@ -254,7 +254,7 @@ verifica**, con el umbral y las condiciones de medición. Cumple SMART: sin "rá
 **Estructura:**
 
 ```
-├── Header: SOLO logo Codeable Labs (flotante, izquierda)
+├── Header: SOLO logo OCTO (flotante, izquierda)
 ├── Título: REQUISITOS FUNCIONALES Y NO FUNCIONALES     (sz=34, bold)
 ├── Subtítulo: NOMBRE DEL PROYECTO EN MAYÚSCULAS        (sz=24, bold)
 ├── Línea de versión: Versión X.Y — Mes Año | nota      (sz=20)
@@ -301,9 +301,9 @@ verifica**, con el umbral y las condiciones de medición. Cumple SMART: sin "rá
 - **Sin bullets.** Los flujos son párrafos numerados a mano dentro de la celda.
 - **Sin saltos de página manuales.** El contenido fluye; las bandas marcan los cortes.
 
-## Header — solo logo Codeable Labs
+## Header — solo logo OCTO
 
-Header flotante con **únicamente** `assets/codeable-logo.png`, anclado a la izquierda:
+Header flotante con **únicamente** `assets/OCTO-logo.png`, anclado a la izquierda:
 
 ```javascript
 new Header({ children: [new Paragraph({ children: [
