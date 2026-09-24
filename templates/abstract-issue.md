@@ -2,6 +2,9 @@
 
 Todo Issue (Ticket) gestionado por el arnés OCTO debe cumplir con un estándar mínimo de calidad para ser ejecutable. Si un desarrollador o agente lee un issue que no cumple con estos puntos, **tiene prohibido empezar a codificar** y debe escalar el ticket para pedir más contexto.
 
+> [!NOTE]
+> Este archivo define el **contrato conceptual**. Las plantillas reales que usan los humanos al crear tickets en GitHub están en `.github/ISSUE_TEMPLATE/`.
+
 ## 1. Contexto de Negocio
 ¿Por qué estamos construyendo o arreglando esto? Debe existir un caso de uso claro o el reporte del impacto en el usuario final.
 
