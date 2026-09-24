@@ -1,36 +1,30 @@
 ---
 name: Feature Request / Nueva Funcionalidad
-about: Sugiere una idea o una nueva característica para el proyecto.
+about: Sugiere una idea o característica. Debe contener reglas de negocio claras para el agente (OCTO).
 title: 'feat: [Breve título de la feature]'
-labels: enhancement
+labels: enhancement, feature
 assignees: ''
 ---
 
-## 1. Contexto de Negocio
-*¿Por qué necesitamos esto? Describe el problema o la oportunidad. Ej: "Actualmente los usuarios no pueden hacer X, lo que causa Y".*
+## 1. El Problema de Negocio (Por qué)
+*Explica la fricción actual que justifica construir esto.*
+- **Problema:** ...
 
-- **El Problema:** ...
-- **La Solución Propuesta:** ...
+## 2. La Solución Propuesta (El Qué)
+*Describe cómo debería funcionar la nueva característica desde la perspectiva del usuario.*
+- **Solución:** ...
 
-## 2. Criterios de Aceptación (DoD)
-*Enumera las condiciones exactas que deben cumplirse para dar esta característica por terminada.*
-- [ ] ...
-- [ ] ...
+## 3. Criterios de Aceptación Técnicos (DoD) 🧠
+*¡OBLIGATORIO! El agente de IA programará en base a esto. Debe ser una lista exhaustiva de condiciones lógicas.*
+- [ ] La regla de negocio X se cumple cuando Y.
+- [ ] El endpoint devuelve Z en caso de éxito.
+- [ ] Si ocurre el error A, el sistema debe responder B.
 
-## 3. Alternativas Consideradas (Opcional)
-*¿Pensaste en otras formas de resolver esto? ¿Por qué elegiste la actual?*
-- ...
-
-## 4. Dependencias y Riesgos
-*¿Hay algo que deba hacerse antes? ¿Afecta a algo existente (ej. migraciones de BD, APIs externas)?*
-- ...
-
-## 5. Relación Arquitectónica
-*¿Qué capa del sistema será afectada principalmente?*
-- [ ] Frontend / UI
-- [ ] Backend / API
-- [ ] Base de Datos
-- [ ] Integración con terceros
+## 4. Dependencias, Pantallas y Endpoints Afectados
+*¿Dónde vivirá esta feature? Dale contexto de ubicación al agente.*
+- **Pantalla/Módulo:** [Ej: Dashboard de Reportes]
+- **API/Rutas:** [Ej: POST /api/reports]
+- **Depende de:** [Ej: Issue #123 o un servicio externo]
 
 ---
-*Nota para OCTO (Agente): Antes de iniciar el desarrollo, valida que los Criterios de Aceptación (DoD) sean claros y precisos. Si es ambiguo, detente y pide aclaraciones.*
+*Nota interna:* OCTO utilizará el Punto 3 (DoD) para diseñar la arquitectura y generar los tests. Si el DoD es ambiguo, el agente suspenderá la ejecución.
