@@ -96,11 +96,50 @@ vocabulario por etapa.
     Quien mantiene el arnés convierte issues en PRs, y el cambio le llega a todos por el
     submódulo. Ver `skills/friction-log/`.
 
-13. **Preflight Check (Gatekeeper Cero Alucinaciones).** Antes de iniciar trabajo de código o análisis estructural, el orquestador DEBE detenerse y ejecutar un *Preflight Check*: verificar y reportar si las dependencias base de OCTO (Engram, Graphify, GitHub CLI) están instanciadas en el entorno local del proyecto. Si falta alguna, es OBLIGATORIO detenerse, informarlo y pedir permiso explícito al usuario para configurar o instanciar el componente faltante (ej. crear el repo vía gh, instanciar el grafo). Trabajar a ciegas sin este seteo está prohibido.
+13. **Preflight Check (Procedimiento Bloqueante — Paso Cero Absoluto).** Antes de leer o escribir cualquier archivo de negocio, antes de tocar cualquier rama, el orquestador DEBE ejecutar ESTE procedimiento en orden y reportar cada resultado al usuario:
 
-14. **Seguridad de Ramas y Gitflow (PR-Only Estricto).** Queda terminantemente prohibido hacer `git push` directo a `main`, `develop` o cualquier rama de producción/integración. Toda tarea (fix, feature, chore) DEBE trabajarse en una rama efímera (ej. `feature/ISSUE-123-nombre`) y salir empaquetada en un Pull Request formal apuntando a `develop` (o a la rama designada en Gitflow). La revisión cruzada (4R) está por encima de la velocidad.
+    **PASO A — Identificar el proyecto:**
+    ```
+    git rev-parse --show-toplevel   # ruta absoluta del repo
+    git remote -v                   # URL del remoto (origin)
+    git branch --show-current       # rama actual
+    ```
+    El agente escribe en el chat: `📍 Proyecto: <nombre-repo> | Remoto: <url> | Rama: <rama-actual>`. Si no puede obtener alguno de estos tres datos, **DETIENE TODO** y lo reporta.
 
-15. **Anclaje Absoluto (Anti-Bypass).** El orquestador y los agentes tienen **PROHIBIDO** saltarse los pasos del flujo del arnés. No pueden usar otros frameworks por encima de OCTO para "resolverlo más rápido". Todo issue debe ser validado contra `templates/abstract-issue.md`, debe pasar por la creación de rama y debe terminar en PR. Si el usuario pide "arreglarlo rápido directo en main", el agente debe negarse citando esta regla de seguridad arquitectónica.
+    **PASO B — Verificar dependencias del arnés:**
+    - Corre `gh auth status` → si falla, detener y pedir al usuario que ejecute `gh auth login`.
+    - Verifica si existe `.env` en el proyecto y si tiene `GH_TOKEN` → si no, detener y reportar.
+    - Consulta Engram buscando contexto previo del proyecto (`mem_search` con el nombre del repo) → si hay memoria previa, cargarla y reportarla. Si no hay, inicializar con `mem_save`.
+
+    **PASO C — Verificar Graphify (Mapa de Código):**
+    - Intenta correr `graphify status` o equivalente para comprobar si el grafo está construido.
+    - Si el grafo NO existe o está desactualizado, el agente DEBE notificarlo y preguntar: *"¿Quieres que construya el mapa del código ahora (graphify build)? Esto es necesario para analizar el blast radius antes de cualquier fix."*
+    - No puede avanzar a análisis de código sin que el grafo exista o el usuario lo exima explícitamente.
+
+    **RESULTADO ESPERADO:** El agente publica un bloque resumen antes de continuar:
+    ```
+    ✅ Proyecto identificado: [nombre]
+    ✅ GH CLI autenticado
+    ✅/⚠️ Graphify: [listo | pendiente de build]
+    ✅/⚠️ Engram: [memoria cargada | sesión nueva]
+    ```
+    Cualquier ⚠️ requiere resolución antes de avanzar.
+
+14. **Seguridad de Ramas y Gitflow (Procedimiento Obligatorio).** Queda terminantemente prohibido hacer `git push` directo a `main`, `develop` o cualquier rama de producción/integración. El flujo correcto es atómico e innegociable:
+
+    1. Verifica con `git branch -a` cuáles ramas remotas existen. Confirma que `develop` existe. Si no existe, crea `develop` desde `main` y notifica al usuario.
+    2. Crea la rama de trabajo desde `develop`:
+       - Para fixes: `git checkout -b bugfix/ISSUE-<nro>-<nombre-corto> develop`
+       - Para features: `git checkout -b feature/ISSUE-<nro>-<nombre-corto> develop`
+    3. Antes de hacer cualquier commit, ejecuta `git branch --show-current` y confirma en el chat que está en la rama correcta (nunca en `main` ni `develop`).
+    4. Al finalizar el código, la ÚNICA salida válida es:
+       ```
+       git push -u origin <rama-efimera>
+       gh pr create -B develop --title "<tipo>: <descripción> (closes #<nro>)" --body "<resumen 4R>"
+       ```
+    5. El agente debe reportar la URL del PR creado al usuario. **El ticket NO está terminado hasta que el PR exista y tenga URL.**
+
+15. **Anclaje Absoluto (Anti-Bypass).** El orquestador y los agentes tienen **PROHIBIDO** saltarse los pasos del flujo del arnés. No pueden usar otros frameworks por encima de OCTO para "resolverlo más rápido". Todo issue debe ser validado contra `templates/abstract-issue.md`, debe pasar por la creación de rama y debe terminar en PR con URL reportada. Si el usuario pide "arreglarlo rápido directo en main", el agente debe negarse citando esta regla de seguridad arquitectónica. Si el agente detecta que el Preflight (Regla 13) fue omitido en cualquier punto del flujo, DEBE interrumpir lo que está haciendo, ejecutar el Preflight completo y luego continuar.
 
 ## Dónde vive cada skill
 
