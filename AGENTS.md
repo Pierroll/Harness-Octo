@@ -96,34 +96,51 @@ vocabulario por etapa.
     Quien mantiene el arnés convierte issues en PRs, y el cambio le llega a todos por el
     submódulo. Ver `skills/friction-log/`.
 
-13. **Preflight Check (Procedimiento Bloqueante — Paso Cero Absoluto).** Antes de leer o escribir cualquier archivo de negocio, antes de tocar cualquier rama, el orquestador DEBE ejecutar ESTE procedimiento en orden y reportar cada resultado al usuario:
+13. **Preflight Check (Procedimiento Bloqueante — Paso Cero Absoluto).** Antes de leer o escribir cualquier archivo de negocio, antes de tocar cualquier rama, el orquestador DEBE ejecutar ESTE procedimiento en orden y explicarle al desarrollador qué está haciendo y POR QUÉ en cada paso.
 
-    **PASO A — Identificar el proyecto:**
+    **PASO A — Identificar el proyecto (Para no trabajar en el repositorio equivocado):**
+    El agente DEBE ejecutar y reportar:
     ```
-    git rev-parse --show-toplevel   # ruta absoluta del repo
-    git remote -v                   # URL del remoto (origin)
-    git branch --show-current       # rama actual
+    git rev-parse --show-toplevel   # confirma la ruta absoluta del repo activo
+    git remote -v                   # confirma la URL del repositorio remoto
+    git branch --show-current       # confirma en qué rama estamos parados
     ```
-    El agente escribe en el chat: `📍 Proyecto: <nombre-repo> | Remoto: <url> | Rama: <rama-actual>`. Si no puede obtener alguno de estos tres datos, **DETIENE TODO** y lo reporta.
+    Explicación al dev: *"Verifico en qué proyecto y rama estamos porque si trabajara sobre el repo equivocado, todos los cambios y el PR terminaría
+    en el lugar incorrecto. Este paso me ancla al contexto real antes de hacer cualquier cosa."*
+    Si no puede obtener alguno de estos tres datos, DETIENE TODO y lo reporta. No continuar a ciegas.
 
-    **PASO B — Verificar dependencias del arnés:**
-    - Corre `gh auth status` → si falla, detener y pedir al usuario que ejecute `gh auth login`.
-    - Verifica si existe `.env` en el proyecto y si tiene `GH_TOKEN` → si no, detener y reportar.
-    - Consulta Engram buscando contexto previo del proyecto (`mem_search` con el nombre del repo) → si hay memoria previa, cargarla y reportarla. Si no hay, inicializar con `mem_save`.
-
-    **PASO C — Verificar Graphify (Mapa de Código):**
-    - Intenta correr `graphify status` o equivalente para comprobar si el grafo está construido.
-    - Si el grafo NO existe o está desactualizado, el agente DEBE notificarlo y preguntar: *"¿Quieres que construya el mapa del código ahora (graphify build)? Esto es necesario para analizar el blast radius antes de cualquier fix."*
-    - No puede avanzar a análisis de código sin que el grafo exista o el usuario lo exima explícitamente.
-
-    **RESULTADO ESPERADO:** El agente publica un bloque resumen antes de continuar:
+    **PASO B — Autenticar GitHub CLI (Para poder leer issues y crear PRs sin credenciales manuales):**
     ```
-    ✅ Proyecto identificado: [nombre]
-    ✅ GH CLI autenticado
-    ✅/⚠️ Graphify: [listo | pendiente de build]
-    ✅/⚠️ Engram: [memoria cargada | sesión nueva]
+    gh auth status
     ```
-    Cualquier ⚠️ requiere resolución antes de avanzar.
+    Explicación al dev: *"Necesito el CLI de GitHub autenticado porque todo el flujo de trabajo pasa por él: leer el ticket, ver la descripción, crear la rama remota y abrir el PR al terminar. Sin esto, trabajaría a ciegas sin poder cerrar el ciclo."*
+    Si falla: detener y pedir que el dev corra `gh auth login` antes de continuar.
+
+    **PASO C — Cargar memoria del proyecto en Engram (Para no alucinar sobre decisiones pasadas):**
+    Buscar en Engram el contexto previo del proyecto con el nombre del repo.
+    Explicación al dev: *"Consulto la memoria persistente para saber si ya trabajamos en este proyecto antes: decisiones de arquitectura tomadas, bugs resueltos, patrones establecidos. Si no cargo este contexto, puedo contradecir decisiones pasadas o repetir trabajo ya hecho."*
+    Si hay memoria previa: cargarla y reportar un resumen al dev.
+    Si es sesión nueva: inicializar una entrada en Engram con el nombre del proyecto, stack detectado y rama base.
+
+    **PASO D — Construir el mapa de relaciones del código (Para investigar sin adivinar):**
+    Verificar si el grafo de dependencias del proyecto está disponible y actualizado.
+    Explicación al dev: *"El grafo de código me permite navegar las relaciones entre archivos, clases y módulos sin tener que leer el proyecto entero de memoria. Cuando tenga que investigar dónde está un bug o qué impacto tiene un cambio, consultaré este mapa en lugar de adivinar. Es como tener los planos del edificio antes de tocar una pared."*
+    Si el grafo NO existe o está desactualizado:
+    - Notificar al dev con la explicación de arriba.
+    - Preguntar: *"¿Quieres que construya el mapa del código ahora? Es necesario para que pueda analizar el impacto de cualquier cambio de forma precisa."*
+    - No avanzar a investigación de código sin el grafo, salvo exención explícita del dev.
+
+    **RESULTADO OBLIGATORIO — El agente publica este bloque antes de continuar:**
+    ```
+    📍 PREFLIGHT OCTO
+      Proyecto : <nombre-repo>
+      Remoto   : <URL>
+      Rama     : <rama-actual>
+      GH CLI   : ✅ autenticado / ⚠️ requiere `gh auth login`
+      Engram   : ✅ contexto previo cargado / 🆕 sesión nueva
+      Mapa     : ✅ grafo disponible / ⚠️ requiere build
+    ```
+    Todo ⚠️ debe resolverse antes de continuar. El agente no puede pedirle al dev que ignore un ⚠️.
 
 14. **Seguridad de Ramas y Gitflow (Procedimiento Obligatorio).** Queda terminantemente prohibido hacer `git push` directo a `main`, `develop` o cualquier rama de producción/integración. El flujo correcto es atómico e innegociable:
 
@@ -140,6 +157,15 @@ vocabulario por etapa.
     5. El agente debe reportar la URL del PR creado al usuario. **El ticket NO está terminado hasta que el PR exista y tenga URL.**
 
 15. **Anclaje Absoluto (Anti-Bypass).** El orquestador y los agentes tienen **PROHIBIDO** saltarse los pasos del flujo del arnés. No pueden usar otros frameworks por encima de OCTO para "resolverlo más rápido". Todo issue debe ser validado contra `templates/abstract-issue.md`, debe pasar por la creación de rama y debe terminar en PR con URL reportada. Si el usuario pide "arreglarlo rápido directo en main", el agente debe negarse citando esta regla de seguridad arquitectónica. Si el agente detecta que el Preflight (Regla 13) fue omitido en cualquier punto del flujo, DEBE interrumpir lo que está haciendo, ejecutar el Preflight completo y luego continuar.
+
+16. **Investigación por Navegación Estructural (Capacidad Natural del Agente).** Antes de proponer cualquier cambio de código, fix o arquitectura, el agente DEBE navegar las relaciones estructurales del proyecto usando las herramientas de análisis de grafo disponibles en el entorno. Esta navegación no es opcional ni secundaria: es el mecanismo primario de investigación.
+
+    El agente debe aplicar este principio de forma autónoma en cualquier situación que requiera entender el código:
+    - **Ante un bug:** antes de leer archivos individualmente, trazar el grafo de llamadas desde el punto de error hacia sus dependencias para identificar la causa raíz real, no la superficial.
+    - **Ante una feature:** antes de escribir código nuevo, navegar qué módulos ya existen, qué interfaces pueden reutilizarse y cuál sería el blast radius de agregar nuevo comportamiento.
+    - **Ante una refactorización:** mapear todas las dependencias del componente a refactorizar antes de tocar una sola línea.
+
+    El agente debe explicarle al dev lo que está descubriendo mientras navega: *"Veo que este módulo es llamado desde 4 lugares distintos; si cambio su interfaz, esos 4 lugares rompen."* La investigación no es silenciosa. El agente muestra su razonamiento.
 
 ## Dónde vive cada skill
 
