@@ -19,7 +19,8 @@ Ejecuta los siguientes comandos y explica al dev qué estás verificando y por q
 git rev-parse --show-toplevel   # Para confirmar en qué repo estamos trabajando
 git remote -v                   # Para confirmar el repo remoto donde irá el PR
 git branch --show-current       # Para confirmar que no estamos en main ni develop
-gh auth status                  # Para poder leer issues y crear PRs
+gh auth status                  # Para confirmar el login en la CLI de GitHub
+# Verificar además que exista GH_TOKEN en el entorno o en un .env local
 ```
 
 Luego publica este bloque en el chat antes de continuar:
@@ -28,7 +29,7 @@ Luego publica este bloque en el chat antes de continuar:
   Proyecto : <nombre del repo>
   Remoto   : <URL de origin>
   Rama     : <rama actual>
-  GH CLI   : ✅ autenticado / ⚠️ requiere `gh auth login`
+  Creds    : ✅ gh CLI autenticado y GH_TOKEN presente / ⚠️ falta auth o token
   Engram   : ✅ contexto previo cargado / 🆕 sesión nueva inicializada
   Mapa     : ✅ grafo de código disponible / ⚠️ requiere build
 ```

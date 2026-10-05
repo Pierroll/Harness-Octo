@@ -109,12 +109,14 @@ vocabulario por etapa.
     en el lugar incorrecto. Este paso me ancla al contexto real antes de hacer cualquier cosa."*
     Si no puede obtener alguno de estos tres datos, DETIENE TODO y lo reporta. No continuar a ciegas.
 
-    **PASO B — Autenticar GitHub CLI (Para poder leer issues y crear PRs sin credenciales manuales):**
+    **PASO B — Autenticar GitHub CLI y Tokens (Para poder interactuar con el repo y APIs de forma automatizada):**
     ```
     gh auth status
+    # Y verificar que exista GH_TOKEN en el entorno o en un archivo .env local
     ```
-    Explicación al dev: *"Necesito el CLI de GitHub autenticado porque todo el flujo de trabajo pasa por él: leer el ticket, ver la descripción, crear la rama remota y abrir el PR al terminar. Sin esto, trabajaría a ciegas sin poder cerrar el ciclo."*
-    Si falla: detener y pedir que el dev corra `gh auth login` antes de continuar.
+    Explicación al dev: *"Necesito el CLI de GitHub autenticado y un GH_TOKEN disponible porque todo el flujo de trabajo pasa por la API: leer el ticket, ver la descripción, crear la rama remota y abrir el PR al terminar. Sin estas credenciales, trabajaría a ciegas y no podría cerrar el ciclo."*
+    Si falla el CLI: detener y pedir que el dev corra `gh auth login` antes de continuar.
+    Si falta el GH_TOKEN: detener y pedir que se configure en el `.env`.
 
     **PASO C — Cargar memoria del proyecto en Engram (Para no alucinar sobre decisiones pasadas):**
     Buscar en Engram el contexto previo del proyecto con el nombre del repo.
