@@ -114,7 +114,7 @@ vocabulario por etapa.
     gh auth status
     # Y verificar que exista GH_TOKEN en el entorno o en un archivo .env local
     ```
-    Explicación al dev: *"Necesito el CLI de GitHub autenticado y un GH_TOKEN disponible porque todo el flujo de trabajo pasa por la API: leer el ticket, ver la descripción, crear la rama remota y abrir el PR al terminar. Sin estas credenciales, trabajaría a ciegas y no podría cerrar el ciclo."*
+    Explicación al dev: *"Necesito dos cosas para GitHub: 1) Que estés logueado en la CLI (`gh auth`) porque a través de ella creo las ramas remotas y levanto los Pull Requests. 2) Un `GH_TOKEN` en tu `.env` porque mis herramientas internas (scripts y MCPs) consumen la API de GitHub directamente para leer los tickets, comentarios y trazas sin chocar con los límites de peticiones. Sin ambas credenciales, trabajo a ciegas y no puedo cerrar el ciclo."*
     Si falla el CLI: detener y pedir que el dev corra `gh auth login` antes de continuar.
     Si falta el GH_TOKEN: detener y pedir que se configure en el `.env`.
 

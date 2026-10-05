@@ -19,8 +19,8 @@ Ejecuta los siguientes comandos y explica al dev qué estás verificando y por q
 git rev-parse --show-toplevel   # Para confirmar en qué repo estamos trabajando
 git remote -v                   # Para confirmar el repo remoto donde irá el PR
 git branch --show-current       # Para confirmar que no estamos en main ni develop
-gh auth status                  # Para confirmar el login en la CLI de GitHub
-# Verificar además que exista GH_TOKEN en el entorno o en un .env local
+gh auth status                  # Para levantar PRs y ramas (CLI)
+# Verificar además que exista GH_TOKEN en el entorno o en un .env local (para las APIs internas del agente)
 ```
 
 Luego publica este bloque en el chat antes de continuar:
