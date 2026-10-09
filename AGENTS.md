@@ -118,13 +118,21 @@ vocabulario por etapa.
     Si falla el CLI: detener y pedir que el dev corra `gh auth login` antes de continuar.
     Si falta el GH_TOKEN: detener y pedir que se configure en el `.env`.
 
-    **PASO C — Cargar memoria del proyecto en Engram (Para no alucinar sobre decisiones pasadas):**
+    **PASO C — Identificar Colaboradores Válidos (Para asignar tickets sin errores):**
+    El agente DEBE ejecutar:
+    ```
+    gh api repos/{owner}/{repo}/collaborators
+    ```
+    Explicación al dev: *"Traigo la lista de colaboradores exactos de este repositorio. En organizaciones grandes, no todos tienen acceso a todos los repos. Con esto me aseguro de que cuando asigne un ticket, la persona realmente exista en este proyecto y evitamos fallos de permisos."*
+    Guardar la lista de usuarios (login) en el contexto de la sesión.
+
+    **PASO D — Cargar memoria del proyecto en Engram (Para no alucinar sobre decisiones pasadas):**
     Buscar en Engram el contexto previo del proyecto con el nombre del repo.
     Explicación al dev: *"Consulto la memoria persistente para saber si ya trabajamos en este proyecto antes: decisiones de arquitectura tomadas, bugs resueltos, patrones establecidos. Si no cargo este contexto, puedo contradecir decisiones pasadas o repetir trabajo ya hecho."*
     Si hay memoria previa: cargarla y reportar un resumen al dev.
     Si es sesión nueva: inicializar una entrada en Engram con el nombre del proyecto, stack detectado y rama base.
 
-    **PASO D — Construir el mapa de relaciones del código (Para investigar sin adivinar):**
+    **PASO E — Construir el mapa de relaciones del código (Para investigar sin adivinar):**
     Verificar si el grafo de dependencias del proyecto está disponible y actualizado.
     Explicación al dev: *"El grafo de código me permite navegar las relaciones entre archivos, clases y módulos sin tener que leer el proyecto entero de memoria. Cuando tenga que investigar dónde está un bug o qué impacto tiene un cambio, consultaré este mapa en lugar de adivinar. Es como tener los planos del edificio antes de tocar una pared."*
     Si el grafo NO existe o está desactualizado:
@@ -139,6 +147,7 @@ vocabulario por etapa.
       Remoto   : <URL>
       Rama     : <rama-actual>
       GH CLI   : ✅ autenticado / ⚠️ requiere `gh auth login`
+      Equipo   : ✅ <N> colaboradores detectados
       Engram   : ✅ contexto previo cargado / 🆕 sesión nueva
       Mapa     : ✅ grafo disponible / ⚠️ requiere build
     ```

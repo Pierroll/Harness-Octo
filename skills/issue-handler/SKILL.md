@@ -21,6 +21,7 @@ git remote -v                   # Para confirmar el repo remoto donde irá el PR
 git branch --show-current       # Para confirmar que no estamos en main ni develop
 gh auth status                  # Para levantar PRs y ramas (CLI)
 # Verificar además que exista GH_TOKEN en el entorno o en un .env local (para las APIs internas del agente)
+gh api repos/{owner}/{repo}/collaborators # Para identificar a quiénes se puede asignar un ticket
 ```
 
 Luego publica este bloque en el chat antes de continuar:
@@ -30,6 +31,7 @@ Luego publica este bloque en el chat antes de continuar:
   Remoto   : <URL de origin>
   Rama     : <rama actual>
   Creds    : ✅ gh CLI autenticado y GH_TOKEN presente / ⚠️ falta auth o token
+  Equipo   : ✅ <N> colaboradores detectados
   Engram   : ✅ contexto previo cargado / 🆕 sesión nueva inicializada
   Mapa     : ✅ grafo de código disponible / ⚠️ requiere build
 ```
