@@ -34,3 +34,4 @@ assignees: ''
 
 ---
 *Nota interna:* Si este ticket no tiene trazas (Punto 3) o DoD claro (Punto 5), el arnés OCTO lo rebotará automáticamente en la fase de Triage.
+*Soporte/Gestión:* Por favor, asegúrate de asignar este issue al **Milestone (Sprint)** correspondiente y revisar las **Labels** en la barra lateral derecha antes de enviarlo.

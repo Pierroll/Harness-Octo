@@ -28,3 +28,4 @@ assignees: ''
 
 ---
 *Nota interna:* OCTO utilizará el Punto 3 (DoD) para diseñar la arquitectura y generar los tests. Si el DoD es ambiguo, el agente suspenderá la ejecución.
+*PM:* Por favor, asegúrate de asignar este issue al **Milestone (Sprint)** correspondiente y revisar las **Labels** en la barra lateral derecha antes de enviarlo.
